@@ -21,7 +21,13 @@
 					<a class="nav-link" href="/blog">Blog</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/cart">Cart <span class="badge badge-secondary"> 3 </span></a>
+					<a class="nav-link" href="/cart">Cart
+						@if(Cart::instance('default')->count() > 0)
+							<span class="badge badge-secondary">
+								{{ Cart::instance('default')->count() }}
+							</span>
+						@endif
+					</a>
 				</li>
 				<li class="nav-item dropdown">
 

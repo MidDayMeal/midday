@@ -12,6 +12,11 @@ Route::get('/cart' , 'CartController@index');
 Route::post('/cart' , 'CartController@store');
 Route::delete('/cart/{product}' , 'CartController@destroy');
 
+Route::get('/checkout','CartController@checkout');
+//Route::post('/checkout','CartController@postcheckout');
+
+Route::get('/orders','CartController@orders');
+
 Route::get('/empty', function(){
 	Cart::destroy();
 });

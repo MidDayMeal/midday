@@ -19,9 +19,17 @@
                 @foreach(Cart::content() as $item)
                     <tr>
                       <td><img class="card-img-top" src="{{ asset('img/'.$item->model->slug.'.jpg') }}" alt="Card image cap" height="50" width="20"></td>
-                      <td>{{ $item->model->name }}</td>
+                      <td><strong>{{ $item->model->name }}</strong></td>
                       <td>{{ $item->model->price }}</td>
-                      <td>@mdo</td>
+                      <td><div class="form-group sm">
+						    <select class="form-control col-5" id="exampleSelect1">
+						      <option>1</option>
+						      <option>2</option>
+						      <option>3</option>
+						      <option>4</option>
+						      <option>5</option>
+						    </select>
+						  </div></td>
                       <td>
                           <form method="post" action="cart/{{ $item->rowId }}">
                               {{ csrf_field() }}
@@ -37,13 +45,7 @@
                     <td>Total Price</td>
                     <td>{{ Cart::total() }}</td>
                     <td>
-                        <!-- <form method="get" action="/myorder">
-                            {{ csrf_field() }}
-
-                            <button type="submit" class="btn btn-success">CheckOut</button>
-                        </form> -->
-
-                        <a href="" class="btn btn-success">CheckOut</a>
+                        <a href="/checkout" class="btn btn-success">CheckOut</a>
                     </td>
                 </tr>
               </tbody>
