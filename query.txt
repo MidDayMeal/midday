@@ -1,0 +1,10 @@
+joint table
+
+
+SELECT user_table.user_ID,user_table.user_name,manu_table.food_name,manu_table.food_cost FROM user_table,manu_table
+WHERE user_table.user_ID=manu_table.food_ID
+ORDER BY user_table.user_ID
+
+SELECT order_table.order_ID,manu_table.food_name,manu_table.food_cost FROM order_table,manu_table
+WHERE order_table.order_ID=manu_table.food_ID
+ORDER BY order_table.order_ID
